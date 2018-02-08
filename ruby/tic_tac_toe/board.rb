@@ -1,22 +1,22 @@
 class Board
-  attr_accessor :board
+  attr_accessor :grid
   def initialize(player1, player2)
-    @board = Array.new(9) { [] }
+    @grid = Array.new(9) { [] }
     @player1 = player1
     @player2 = player2
   end
 
   def display
     system 'clear'
-    puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
+    puts "#{@grid[0]} | #{@grid[1]} | #{@grid[2]}"
     puts "------------"
-    puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
+    puts "#{@grid[3]} | #{@grid[4]} | #{@grid[5]}"
     puts "------------"
-    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+    puts "#{@grid[6]} | #{@grid[7]} | #{@grid[8]}"
   end
 
   def valid_move?(choice)
-    return true if @board[choice - 1] == []
+    return true if @grid[choice - 1] == []
+    false
   end
-  false
 end
